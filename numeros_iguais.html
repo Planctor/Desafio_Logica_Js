@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let cont = 0;
+	let duas = ['00','11','22','33','44','55','66','77','88','99'];
+	let tres = ['000','111','222','333','444','555','666','777','888','999'];
+	let quatro = ['0000','1111','2222','3333','4444','5555','6666','7777','8888','9999'];
+	let d = [];
+	let t = [];
+	let q = [];
+	const valor = 999999;
+	
+	while (cont <= valor) {
+		let s = cont.toString()
+
+		duas.forEach((i) =>{
+			if (s.includes(i)) {
+				d.push(+s)
+			}
+		})
+
+		tres.forEach((i) =>{
+			if (s.includes(i)) {
+				t.push(+s)
+			}
+		})
+
+		quatro.forEach((i) =>{
+			if (s.includes(i)) {
+				q.push(+s)
+			}
+		})	
+
+		cont = cont + 1;
+	}	
+
+	//dois
+	const quantidade_dois = d.length
+	const porcentagem_dois = (quantidade_dois * 100) / valor
+	const valorArredondado_dois = Math.round(porcentagem_dois)
+
+	//tres
+	const quantidade_tres = t.length
+	const porcentagem_tres = (quantidade_tres * 100) / valor
+	const valorArredondado_tres = Math.round(porcentagem_tres)
+
+	//quatro
+	const quantidade_quatro = q.length
+	const porcentagem_quatro = (quantidade_quatro * 100) / valor
+	const valorArredondado_quatro = porcentagem_quatro.toFixed(2)
+
+	console.log(valorArredondado_dois + "% do valor " + valor + " contem 2 numeros iguais lado a lado")
+	console.log(valorArredondado_tres + "% do valor " + valor + " contem 3 numeros iguais lado a lado")
+	console.log(valorArredondado_quatro + "% do valor " + valor + " contem 4 numeros iguais lado a lado")
+
+</script>
+</html>
